@@ -11,11 +11,11 @@
 | 复杂度 | `S` |
 | 阶段 | `P1` |
 | 复用度 | 中 |
-| 资产形态 | 纯提示词（无运行时依赖） |
+| 资产形态 | 提示词 + 确定性脚本（`scripts/rfm_segmentation.py`） |
 
 ## 能力描述
 
-三维打分与分桶
+三维打分与分桶：按 R（最近到店间隔，权重 40%）、F（年消费次数，权重 30%）、M（年累计消费金额，权重 30%）三个维度对会员逐条打 1-5 分，加权求和得到总分（保留 1 位小数），并按阈值切分为高价值（≥4.5）/ 潜力（3.5-4.4）/ 一般挽留（2.5-3.4）/ 流失风险（<2.5）四层，输出评分明细与分层汇总。维度、权重与阈值未给定时采用上述缺省口径并在「假设说明」中显式声明，不暗示唯一正解。配套确定性脚本 `scripts/rfm_segmentation.py` 可离线复现打分，`--demo` 一键跑通并产出 `out/` 下的评分明细 CSV、分层汇总 CSV 与 JSON 结果。
 
 ## 输入规格
 
@@ -49,6 +49,13 @@
 | **Dify** | 新建应用 → 提示词编排 → 粘贴 `prompt.txt` |
 | **Claude** | 新建 Project → Instructions → 粘贴 `prompt.txt` |
 | **ChatGPT** | 新建 GPT → Instructions → 粘贴 `prompt.txt` |
+
+### 方式三：确定性脚本复现（适合大批量/需复核）
+
+1. 准备输入 JSON（`records` 字段为逐行会员文本，格式见 `examples/input.json`）
+2. 运行 `python scripts/rfm_segmentation.py --input examples/input.json --outdir out`（或 `--demo` 用内置演示数据）
+3. 脚本按固定口径（R 40% / F 30% / M 30%，阈值 4.5 / 3.5 / 2.5）离线打分，无需任何模型调用
+4. 在 `out/` 下获取 `评分明细.csv`、`分层汇总.csv`、`rfm_result.json` 三份真实产物，与 AI 输出交叉复核
 
 ## 边界（不做的事）
 
