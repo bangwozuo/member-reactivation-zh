@@ -1,0 +1,105 @@
+{
+  "skill_id": "de_local_06_sk02",
+  "name": "RFM 分层",
+  "type": "atomic",
+  "input": {
+    "type": "object",
+    "required": [
+      "records"
+    ],
+    "properties": {
+      "records": {
+        "type": "string",
+        "description": "待评估记录：打分对象的数据记录"
+      },
+      "dimensions": {
+        "type": "string",
+        "description": "维度与权重：评分维度及权重（可选，缺省由你提出并说明）"
+      },
+      "thresholds": {
+        "type": "string",
+        "description": "分层阈值：各层的分界值（可选）"
+      }
+    }
+  },
+  "output": {
+    "type": "object",
+    "required": [
+      "scores",
+      "segments",
+      "assumption"
+    ],
+    "properties": {
+      "scores": {
+        "type": "array",
+        "description": "逐条给出各维度分与总分",
+        "items": {
+          "type": "object",
+          "properties": {
+            "#": {
+              "type": "string"
+            },
+            "对象": {
+              "type": "string"
+            },
+            "维度A": {
+              "type": "string"
+            },
+            "维度B": {
+              "type": "string"
+            },
+            "总分": {
+              "type": "string"
+            },
+            "分层": {
+              "type": "string"
+            }
+          }
+        }
+      },
+      "segments": {
+        "type": "array",
+        "description": "各层数量与特征",
+        "items": {
+          "type": "object",
+          "properties": {
+            "层级": {
+              "type": "string"
+            },
+            "数量": {
+              "type": "string"
+            },
+            "占比": {
+              "type": "string"
+            },
+            "典型特征": {
+              "type": "string"
+            },
+            "建议动作": {
+              "type": "string"
+            }
+          }
+        }
+      },
+      "assumption": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        },
+        "description": "所用维度、权重与阈值的来源或假设"
+      }
+    },
+    "x-rendered-from": "capability:score"
+  },
+  "constraints": {
+    "max_input_length": 5000,
+    "forbidden_words": [
+      "最好",
+      "第一",
+      "100%"
+    ],
+    "ai_label_required": true,
+    "human_review_required": true,
+    "external_api_required": false
+  }
+}

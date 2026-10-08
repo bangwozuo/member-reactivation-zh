@@ -1,0 +1,76 @@
+{
+  "skill_id": "de_local_06_sk01",
+  "name": "会员数据对接",
+  "type": "atomic",
+  "input": {
+    "type": "object",
+    "required": [
+      "system",
+      "task"
+    ],
+    "properties": {
+      "system": {
+        "type": "string",
+        "description": "目标系统：需要读写的系统名称（如企业微信、抖店后台）"
+      },
+      "task": {
+        "type": "string",
+        "description": "读写任务：要读什么、要写什么"
+      }
+    }
+  },
+  "output": {
+    "type": "object",
+    "required": [
+      "field_map",
+      "operation",
+      "limitation"
+    ],
+    "properties": {
+      "field_map": {
+        "type": "array",
+        "description": "系统字段与资产字段的对应关系",
+        "items": {
+          "type": "object",
+          "properties": {
+            "业务字段": {
+              "type": "string"
+            },
+            "系统字段": {
+              "type": "string"
+            },
+            "方向": {
+              "type": "string"
+            },
+            "说明": {
+              "type": "string"
+            }
+          }
+        }
+      },
+      "operation": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        },
+        "description": "用户需要在其平台上执行的步骤"
+      },
+      "limitation": {
+        "type": "string",
+        "description": "明确声明本资产不能自动完成该操作"
+      }
+    },
+    "x-rendered-from": "capability:connector_io"
+  },
+  "constraints": {
+    "max_input_length": 5000,
+    "forbidden_words": [
+      "最好",
+      "第一",
+      "100%"
+    ],
+    "ai_label_required": true,
+    "human_review_required": true,
+    "external_api_required": false
+  }
+}

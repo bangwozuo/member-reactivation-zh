@@ -1,0 +1,81 @@
+{
+  "skill_id": "de_local_06_sk04",
+  "name": "营销日历",
+  "type": "atomic",
+  "input": {
+    "type": "object",
+    "required": [
+      "items"
+    ],
+    "properties": {
+      "items": {
+        "type": "string",
+        "description": "待排项：需要排期的条目，含时长/优先级/平台等约束"
+      },
+      "constraints": {
+        "type": "string",
+        "description": "约束条件：可用时间段、频率上限、平台规则（可选）"
+      }
+    }
+  },
+  "output": {
+    "type": "object",
+    "required": [
+      "schedule",
+      "conflicts",
+      "unscheduled"
+    ],
+    "properties": {
+      "schedule": {
+        "type": "array",
+        "description": "逐项时间安排",
+        "items": {
+          "type": "object",
+          "properties": {
+            "日期": {
+              "type": "string"
+            },
+            "时间": {
+              "type": "string"
+            },
+            "内容": {
+              "type": "string"
+            },
+            "平台": {
+              "type": "string"
+            },
+            "状态": {
+              "type": "string"
+            }
+          }
+        }
+      },
+      "conflicts": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        },
+        "description": "时间/资源冲突及处理方式"
+      },
+      "unscheduled": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        },
+        "description": "受约束无法安排的条目"
+      }
+    },
+    "x-rendered-from": "capability:schedule"
+  },
+  "constraints": {
+    "max_input_length": 5000,
+    "forbidden_words": [
+      "最好",
+      "第一",
+      "100%"
+    ],
+    "ai_label_required": true,
+    "human_review_required": true,
+    "external_api_required": false
+  }
+}

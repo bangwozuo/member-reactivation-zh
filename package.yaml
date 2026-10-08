@@ -1,0 +1,44 @@
+name: 会员唤醒师
+repo: bangwozuo/member-reactivation-zh
+legacy_name: 会员唤醒师
+version: 0.2.0
+asset_type: prompt-only
+stage: P1
+complexity: M
+group: 本地生活商家
+runtime_dependencies: none
+api_key_required: false
+demand_ids:
+  - D21
+
+workflows:
+  - name: 会员 RFM 分层
+    id: de_local_06_wf01
+  - name: 召回话术与券包生成
+    id: de_local_06_wf02
+  - name: 触达时机推荐
+    id: de_local_06_wf03
+  - name: 复购效果归因
+    id: de_local_06_wf04
+  - name: 储值流失预警
+    id: de_local_06_wf05
+
+skills:
+  - id: member-data-sync
+    name: 会员数据对接
+    family: 
+  - id: rfm-segmentation
+    name: RFM 分层
+    family: 
+  - id: winback-copy-generate
+    name: 召回文案生成
+    family: 
+  - id: marketing-calendar
+    name: 营销日历
+    family: 
+
+compliance:
+  ai_label_required: true
+  human_review_required: true
+  forbidden_words_check: true
+  official_api_only: true
