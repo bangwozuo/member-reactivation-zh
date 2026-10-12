@@ -110,22 +110,22 @@ member-reactivation-zh/
 
 ## 技能清单（4 个）
 
-| # | 技能 | 能力族 | 复杂度 | 提示词 | 文档 |
-|---|------|--------|--------|--------|------|
-| 1 | 会员数据对接 | 连接器数据读写 | `M` | [prompt.txt](skills/member-data-sync/prompt.txt) | [docs](skills/member-data-sync/docs/) |
-| 2 | RFM 分层 | 打分与分层 | `S` | [prompt.txt](skills/rfm-segmentation/prompt.txt) | [docs](skills/rfm-segmentation/docs/) |
-| 3 | 召回文案生成 | 文案撰写 | `S` | [prompt.txt](skills/winback-copy-generate/prompt.txt) | [docs](skills/winback-copy-generate/docs/) |
-| 4 | 营销日历 | 排期与调度 | `S` | [prompt.txt](skills/marketing-calendar/prompt.txt) | [docs](skills/marketing-calendar/docs/) |
+| # | 技能 | 能力族 | 复杂度 | 说明文档 |
+|---|------|--------|--------|----------|
+| 1 | 会员数据对接 | 连接器数据读写 | `M` | [README](skills/member-data-sync/README.md) |
+| 2 | RFM 分层 | 打分与分层 | `S` | [README](skills/rfm-segmentation/README.md) |
+| 3 | 召回文案生成 | 文案撰写 | `S` | [README](skills/winback-copy-generate/README.md) |
+| 4 | 营销日历 | 排期与调度 | `S` | [README](skills/marketing-calendar/README.md) |
 
 ## 工作流清单（5 条）
 
-| # | 工作流 | 阶段 | 复杂度 | 触发 | 定义 | 文档 |
-|---|--------|------|--------|------|------|------|
-| 1 | 会员 RFM 分层 | `P1` | `M` | 定时（每周） | [SKILL.md](workflows/member-rfm-segmentation-flow/SKILL.md) | [docs](workflows/member-rfm-segmentation-flow/docs/) |
-| 2 | 召回话术与券包生成 | `P1` | `S` | 随 W1 联动 | [SKILL.md](workflows/winback-script-coupon-flow/SKILL.md) | [docs](workflows/winback-script-coupon-flow/docs/) |
-| 3 | 触达时机推荐 | `P1` | `S` | 定时（每日） | [SKILL.md](workflows/reach-timing-recommend-flow/SKILL.md) | [docs](workflows/reach-timing-recommend-flow/docs/) |
-| 4 | 复购效果归因 | `P2` | `M` | 定时（每月） | [SKILL.md](workflows/repurchase-attribution-flow/SKILL.md) | [docs](workflows/repurchase-attribution-flow/docs/) |
-| 5 | 储值流失预警 | `P1` | `S` | 定时（每周） | [SKILL.md](workflows/storedvalue-churn-alert-flow/SKILL.md) | [docs](workflows/storedvalue-churn-alert-flow/docs/) |
+| # | 工作流 | 阶段 | 复杂度 | 触发 | 说明文档 |
+|---|--------|------|--------|------|----------|
+| 1 | 会员 RFM 分层 | `P1` | `M` | 定时（每周） | [README](workflows/member-rfm-segmentation-flow/README.md) |
+| 2 | 召回话术与券包生成 | `P1` | `S` | 随 W1 联动 | [README](workflows/winback-script-coupon-flow/README.md) |
+| 3 | 触达时机推荐 | `P1` | `S` | 定时（每日） | [README](workflows/reach-timing-recommend-flow/README.md) |
+| 4 | 复购效果归因 | `P2` | `M` | 定时（每月） | [README](workflows/repurchase-attribution-flow/README.md) |
+| 5 | 储值流失预警 | `P1` | `S` | 定时（每周） | [README](workflows/storedvalue-churn-alert-flow/README.md) |
 
 ---
 
