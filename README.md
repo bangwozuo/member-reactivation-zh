@@ -4,8 +4,7 @@
 
 ![会员唤醒师 · 动态演示](docs/assets/hero.gif)
 
-*▲ 实时演示（自动循环）· [▶ 观看完整版合集视频](docs/demo.mp4)*
-
+*▲ 真实执行录播（自动循环播放）· [▶ 观看完整版合集视频](docs/demo.mp4)*
 
 [![Stage](https://img.shields.io/badge/stage-P1-orange)](https://github.com/bangwozuo)
 [![Asset](https://img.shields.io/badge/asset-prompt--only-blueviolet)](#资产形态)
@@ -113,10 +112,10 @@ member-reactivation-zh/
 
 | # | 技能 | 能力族 | 复杂度 | 提示词 | 文档 |
 |---|------|--------|--------|--------|------|
-| 1 | 会员数据对接 | — | `M` | [prompt.txt](skills/member-data-sync/prompt.txt) | [docs](skills/member-data-sync/docs/) |
-| 2 | RFM 分层 | — | `S` | [prompt.txt](skills/rfm-segmentation/prompt.txt) | [docs](skills/rfm-segmentation/docs/) |
-| 3 | 召回文案生成 | 文案生成 | `S` | [prompt.txt](skills/winback-copy-generate/prompt.txt) | [docs](skills/winback-copy-generate/docs/) |
-| 4 | 营销日历 | 排期调度 | `S` | [prompt.txt](skills/marketing-calendar/prompt.txt) | [docs](skills/marketing-calendar/docs/) |
+| 1 | 会员数据对接 | 连接器数据读写 | `M` | [prompt.txt](skills/member-data-sync/prompt.txt) | [docs](skills/member-data-sync/docs/) |
+| 2 | RFM 分层 | 打分与分层 | `S` | [prompt.txt](skills/rfm-segmentation/prompt.txt) | [docs](skills/rfm-segmentation/docs/) |
+| 3 | 召回文案生成 | 文案撰写 | `S` | [prompt.txt](skills/winback-copy-generate/prompt.txt) | [docs](skills/winback-copy-generate/docs/) |
+| 4 | 营销日历 | 排期与调度 | `S` | [prompt.txt](skills/marketing-calendar/prompt.txt) | [docs](skills/marketing-calendar/docs/) |
 
 ## 工作流清单（5 条）
 
